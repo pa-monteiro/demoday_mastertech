@@ -1,10 +1,39 @@
 {% extends 'layout.html' %} 
+{% load staticfiles %}
 
 {% block content %}
-<form>
-    {% csrf_token %}
-    {{form.as_p}}
+<div class="index" >
+    <div id="cadastro"> <h1>Cadastro</h1>
+        <div class="linha-cadastro">
+            <p>Nome <br> completo</p>
+            <input type="text" name="nome" placeholder="    Nome completo">
+        </div>
 
-    <input type="submit" value="Enviar">
-</form>
-{%endblock%}
+        <div class="linha-cadastro">
+            <p>Data de <br> nascimento</p>
+            <input type="date" name="dataDeNascimento" placeholder="    Data de nascimento">
+        </div>
+        <div class="linha-cadastro">
+            <p>Email</p>
+            <input type="email" name="email" placeholder="  Email">
+        </div>
+        <div class="linha-cadastro">
+            <p>Senha</p>
+            <input type="password" name="senha" placeholder="   Senha">
+        </div>
+        <div class="linha-cadastro">
+            <p>Confirmar <br> senha</p>
+            <input type="password" name="senhaConfirma" placeholder="   Senha">
+        </div>
+        <div>
+            <div id="foto-cadastro">
+                <p>Foto perfil</p>
+                <img src="{% static 'icones/user.png' %}"alt="">
+            </div>
+        </div>
+        <div class="linha-cadastro">
+            <input type="submit" value="Cadastrar">
+        </div>
+    </div>
+</div>
+{% endblock %}

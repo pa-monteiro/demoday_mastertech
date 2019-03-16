@@ -84,13 +84,14 @@ footer{
     margin-top:5vh;
 }
 .login h1{
+    color: white;
     height: 10px;
     font-size: 22pt;
     font-family: "Poiret One";
     margin-bottom:60px;
     margin-top:30px;
 }
-input{
+.login input{
     margin:7px;
     height: 35px;
     border-radius:12px;
@@ -139,4 +140,85 @@ input[type=submit]{
     input[type=submit]{
         font-size: 14pt;
     }
+}
+/* CADASTRO */
+/* #cadastro{
+    font-family: "poiret one";
+    color:white;
+    background-color: #FF6691;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    border-radius: 12px;
+}
+#cadastro .linha-cadastro{
+    display: flex;
+    justify-content: flex-end;
+    width:100%;
+    margin-right: 40%;
+}
+#cadastro input[type=submit]{
+    display:flex;
+    flex-direction: column;
+    font-size:14pt;
+    font-weight: bold;
+}
+#cadastro input[type=date]{
+    margin-right: 9%;
+} 
+#cadastro input{
+    margin-left: 10px;
+    font-size: 12px;
+    margin:7px;
+    height: 35px;
+    border-radius:12px;
+    align-items: center;
+    border:none;
+}
+#foto-cadastro{
+    display:flex;
+    justify-content: center;
+}
+#foto-cadastro p{
+    display:flex;
+}
+
+#foto-cadastro img{
+    display:flex;
+    justify-content: flex-start;
+    height: 90px;
+    width: auto;
+
+}
+
+@media (min-width:1024px){
+    #cadastro{
+        width: 30vw;
+        border-radius: 12px;
+    }
+    #cadastro .linha-cadastro{
+        display: flex;
+        justify-content: flex-end;
+        width:100%;
+        margin-right:130px;
+    }
+    #cadastro input{
+        margin-left: 10px;
+    }
+    #cadastro input[type=submit]{
+    
+        margin-right: 60px;
+    }
+} */
+#busca{
+    display: flex;
+    justify-content: center;
+    background-color: #FF366E;
+    height:10%;
+}
+#busca input{
+width: 40%;
+
 }
