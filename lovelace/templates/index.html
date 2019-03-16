@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <title>Lovelace.</title>
+</head>
+
+<body>
+        <header class="header-login">
+                <h1>LOVELACE</h1>
+        </header>
+    <div class="index">
+        <div class="login">
+            <h1>login</h1>
+            <input type="email" name="email" placeholder="  Email"/>
+            <input type="password" name="senha" placeholder="   Senha"/>
+            <a href="">Esqueci minha senha</a>
+            <div class="botoes-submit">
+                <input type="submit" value="Entrar">
+                <input type="submit" value="Cadastre-se">
+            </div>    
+        </div>
+    </div>
+</body>
+</html>
