@@ -3,7 +3,7 @@ from . import views
 #Aqui estmaos importando do Django a função url e todas as nossas views do aplicativo
 
 urlpatterns = [
-    path('', views.index, name="index"),
+    path('/index/', views.index, name="index"),
     # atribui a view chamada index para a URL raiz
     # name="index" é o nome da URL que será usado apra identificar a view
     path('/maps/', views.maps, name="maps"),
