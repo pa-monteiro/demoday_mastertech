@@ -33,3 +33,9 @@ class Opiniao(models.Model):
     opiniao = models.TextField()
     class Meta:
         verbose_name_plural = "Opiniao"
+
+class TipoAtendimento(models.Model):
+    def __str__(self):
+        return self.texto
+
+    tipoatendimento = models.IntegerField(default=0)
