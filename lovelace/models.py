@@ -51,3 +51,9 @@ class Estabelecimento(models.Model):
 
     def __str__(self):
         return self.nome_estabelecimento
+
+class Categoria(models.Model):
+    estabelecimentos = models.ForeignKey(Estabelecimento, on_delete=models.CASCADE)
+    nome = models.CharField(max_length=200, default='')
+    class Meta:
+        verbose_name_plural = "Categoria"

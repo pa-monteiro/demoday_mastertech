@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from lovelace import forms
-from .models import Usuario, Parceiras, Estabelecimento 
+from .models import Usuario, Parceiras, Estabelecimento, Categoria
 # Incluir os modelos/classes (definidos em models.py)
 
 # Create your views here.
@@ -29,11 +29,16 @@ def render_guia(request):
     return render(request, 'guia.html')
 
 def render_guiaresultados(request):
-    estabelecimentos = Estabelecimento.objects.all()
+    estabelecimentos = Categoria.objects.all()
     return render(request, 'guiaresultados.html', {'items' : estabelecimentos})
 
-def render_guiaresultadosdetalhe(request):
-    return render(request, 'guiaresultadosdetalhe.html')
+def render_guiaresultadosbalada(request):
+    estabelecimentos = Categoria.objects.all()
+    return render(request, 'guiaresultadosbalada.html', {'items' : estabelecimentos})
+
+def render_guiaresultadosacademia(request):
+    estabelecimentos = Categoria.objects.all()
+    return render(request, 'guiaresultadosacademia.html', {'items' : estabelecimentos})
 
 def render_parceiras(request):
     return render(request, 'parceiras.html')
