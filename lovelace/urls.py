@@ -13,5 +13,6 @@ urlpatterns = [
     path('/guiaresultados/', views.guiaresultados, name="guiaresultados"),
     path('/parceiras/', views.parceiras, name="parceiras"),
     path('/parceirasresultados/', views.parceirasresultados, name="parceirasresultados"),
-    path('/cadastroparceiras/', views.cadastroparceiras, name="cadastroparceiras")
+    path('/cadastroparceiras/', views.cadastroparceiras, name="cadastroparceiras"),
+    path('/forum/', views.forum, name="forum")
 ]

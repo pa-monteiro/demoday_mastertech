@@ -30,4 +30,5 @@ urlpatterns = [
     path('parceiras/', views.render_parceiras),
     path('parceirasresultados/', views.render_parceirasresultados),
     path('cadastroparceiras/', views.render_cadastroparceiras),
+    path('forum/', views.render_forum)
 ]

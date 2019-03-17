@@ -14,6 +14,31 @@ class UsuarioCriarForm(forms.ModelForm):
             'senha_usuario'
         ]
 
+class Vota(forms.Form):
+    VOTA=[('iluminado', 'Iluminado?'),
+         ('movimentado','Movimentado'),
+         ('vigilancia', 'Vigilancia'),
+         ('segura', 'Voce se sente segura aqui?')]
+         #array com valor e label dos radio buttons
+
+    vota = forms.MultipleChoiceField(
+        #criando um objeto do tipo MultipleChoicefield, diferente do RadioSelect. As opções são passadas com parâmetros do próprio objeto, e não do objeto ChecboxSelectMultiple
+        label='Classifique:',
+        widget=forms.CheckboxSelectMultiple,
+        choices=VOTA
+    )
+
+    outros = forms.CharField(
+        max_length=256,
+        label='Outros / Deixe sua opinião',
+        widget=forms.TextInput(
+            attrs={
+                'required' : True,
+                'id' : 'outros'
+            }
+        )
+    )
+
 class UsuariooCriarForm(forms.Form):
 #    foto_usuario = forms.ImageField(
 #        label='Foto do Perfil: '
@@ -133,20 +158,19 @@ class ParceirasCriarForm(forms.Form):
         )
     )
 
+    CHOICES=[('online', 'Online'),
+         ('presencial','Presencial')]
+         #array com valor e label dos radio buttons
+
     tipo_atend = forms.CharField(
-        max_length=30,
+        #criando um objeto do tipo RadioSelect passando como parâmetro o array de choices
         label='Tipo de Atendimento',
-        widget=forms.TextInput(
-            attrs={
-                'required' : True,
-                'id' : 'tipo_atend'
-            }
-        )
+        widget=forms.RadioSelect(choices=CHOICES)
     )
 
     valor = forms.CharField(
         max_length=60,
-        label='valor',
+        label='Valor a ser cobrado',
         widget=forms.TextInput(
             attrs={
                 'required' : True,
@@ -168,7 +192,7 @@ class ParceirasCriarForm(forms.Form):
 
     celular_parceiras= forms.CharField(
         max_length=11,
-        label='celular',
+        label='Celular',
         widget=forms.TextInput(
             attrs={
                 'required': True,

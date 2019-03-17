@@ -19,7 +19,10 @@ def render_home(request):
     return render(request, 'home.html')
 
 def render_maps(request):
-    return render(request, 'maps.html')
+    form = forms.Vota(request.POST or None)
+    form.is_valid()
+
+    return render(request, 'maps.html', {'form': form})
 
 def render_guia(request):
     return render(request, 'guia.html')
@@ -38,7 +41,6 @@ def render_parceirasresultados(request):
 
 def render_cadastroparceiras(request):
     form = forms.ParceirasCriarForm(request.POST or None)
-
     form.is_valid()
 
     return render(request, 'cadastroparceiras.html', {'form': form})
