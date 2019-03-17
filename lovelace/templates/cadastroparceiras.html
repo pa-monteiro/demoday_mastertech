@@ -1,11 +1,9 @@
 {% extends 'layout.html' %} 
 
 {% block content %}
-<form>
+<form action="/salvarparceiras/" method="POST">
     {% csrf_token %}
     {{form.as_p}}
-
-
 
  <!--   <input type="radio" name="tipoatendimento" value="teste">
     <input type="radio" name="tipoatendimento" value="bla">
