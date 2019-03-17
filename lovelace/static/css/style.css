@@ -21,6 +21,7 @@ header h1{
     text-align: center;
     color: #ff366e;
     font-family: "Poiret One";
+    cursor:pointer;
 }
 footer{
     bottom:0;
@@ -221,7 +222,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FF6691;
+    background-color: #FF366E;
     height:10%;
 }
 #busca input{
@@ -236,6 +237,8 @@ footer{
     align-items: center;
 }
 #pagina-guia img{
+    width: 425px;
+    height: 250px;
     display: flex;
     background-color: white;
     border-radius:12px;
@@ -248,11 +251,11 @@ footer{
     display: flex;
     justify-content: center;
     font-size:20pt;
-    font-weight: bold;
+    font-weight: bolder;
     color:#FF0047;
 }
 #pagina-guia img:hover{
-    filter: brightness(120%);
+    opacity:0.7;
     transition:0.3s;
 }
 #busca input[type="image"]{
@@ -267,54 +270,7 @@ footer{
     border:none;
 }
 
-
-
-
-.menu-hamburguer{
-    padding: 10px 20px;
-    display: flex;
-    text-align: right;
-    text-decoration: none;
-
-}
-.toggle{
-    display: flex;
-    width: 100%;
-    padding: 10px 20px;
-    color: black;
-    display: flex;
-    justify-content: center;
-}
-ul{
-    width: 80%;
-    margin: 0 auto;
-    padding: 0;
-}
-ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 20px;
-}
-ul li:hover{
-    background-color: white;
-}
-ul li a{
-    color: black;
-    text-decoration: none;
-}
 @media (max_width:768px){
     toggle{
         display: block;
     }
-    
-    ul{
-        width: 100%;
-        display: flex;
-    }
-
-    ul li{
-        display: block;
-        text-align: center;
-    }
-
-}
