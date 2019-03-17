@@ -1,1 +1,15 @@
 {% extends 'layout.html' %} 
+{% load staticfiles %}
+
+{% block content %}
+
+    <div>
+        {%  for i in items %}
+            <p>{{i.nome_estabelecimento}}</p>
+            <p>{{i.endereco_estabelecimento}}</p>
+            <p>{{i.horario_estabelecimento}}</p>
+            <p>{{i.telefone_estabelecimento}}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

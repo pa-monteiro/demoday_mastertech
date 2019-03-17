@@ -39,6 +39,8 @@ class Vota(forms.Form):
         )
     )
 
+
+
 class UsuariooCriarForm(forms.Form):
 #    foto_usuario = forms.ImageField(
 #        label='Foto do Perfil: '

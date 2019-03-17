@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from lovelace import forms
-from .models import Parceiras
+from .models import Usuario, Parceiras, Estabelecimento 
 # Incluir os modelos/classes (definidos em models.py)
 
 # Create your views here.
@@ -11,7 +11,6 @@ def render_index(request):
 def render_cadastrousuario(request):
     form = forms.UsuarioCriarForm(request.POST or None)
     form.is_valid()
-
 
     return render(request, 'cadastrousuario.html', {'form': form})
 
@@ -26,10 +25,12 @@ def render_maps(request):
     return render(request, 'maps.html', {'form': form})
 
 def render_guia(request):
+
     return render(request, 'guia.html')
 
 def render_guiaresultados(request):
-    return render(request, 'guiaresultados.html')
+    estabelecimentos = Estabelecimento.objects.all()
+    return render(request, 'guiaresultados.html', {'items' : estabelecimentos})
 
 def render_guiaresultadosdetalhe(request):
     return render(request, 'guiaresultadosdetalhe.html')
@@ -49,7 +50,6 @@ def salvarparceiras(request):
     form = forms.ParceirasCriarForm(request.POST or None)
     form.is_valid()
     parceira_obj = Parceiras.objects.create()
-    #escolhida = Alternativa.objects.get(pk=voto)
     parceira_obj.nome_parceira = request.POST['nome_parceira']
     parceira_obj.formacao = request.POST['formacao']
     parceira_obj.profissao = request.POST['profissao']

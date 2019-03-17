@@ -1,6 +1,7 @@
 body{
     margin:0;
     background-color:rgb(238, 217, 223);
+    padding: 0;
 }
 /* LAYOUT */
 header{  
@@ -266,3 +267,54 @@ footer{
     border:none;
 }
 
+
+
+
+.menu-hamburguer{
+    padding: 10px 20px;
+    display: flex;
+    text-align: right;
+    text-decoration: none;
+
+}
+.toggle{
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+ul li:hover{
+    background-color: white;
+}
+ul li a{
+    color: black;
+    text-decoration: none;
+}
+@media (max_width:768px){
+    toggle{
+        display: block;
+    }
+    
+    ul{
+        width: 100%;
+        display: flex;
+    }
+
+    ul li{
+        display: block;
+        text-align: center;
+    }
+
+}
