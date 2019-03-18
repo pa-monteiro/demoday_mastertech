@@ -4,13 +4,19 @@
 {% block content %}
 <div class="index" >
     <div id="cadastro"> <h1>Cadastro</h1>
+        <form action="/salvarusuario/" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit"> Cadastrar</button>
+        </form>
+        <!--
         <div class="linha-cadastro">
             <p>Nome <br> completo</p>
             <input type="text" name="nome" placeholder="    Nome completo">
         </div>
 
         <div class="linha-cadastro">
-            <p>Data de <br> nascimento</p>
+            <p>Data de nascimento</p>
             <input type="date" name="dataDeNascimento" placeholder="    Data de nascimento">
         </div>
         <div class="linha-cadastro">
@@ -22,7 +28,7 @@
             <input type="password" name="senha" placeholder="   Senha">
         </div>
         <div class="linha-cadastro">
-            <p>Confirmar <br> senha</p>
+            <p>Confirmar senha</p>
             <input type="password" name="senhaConfirma" placeholder="   Senha">
         </div>
         <div>
@@ -34,6 +40,7 @@
         <div class="linha-cadastro">
             <input type="submit" value="Cadastrar" onclick="window.location='/index/'">
         </div>
+    -->
     </div>
 </div>
 {% endblock %}

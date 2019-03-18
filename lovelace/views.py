@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from lovelace import forms
-from .models import Usuario, Parceiras, Estabelecimento, Categoria
+from .models import Usuario, Parceiras, Estabelecimento, Categoria, FiltroParceiras
 # Incluir os modelos/classes (definidos em models.py)
 
 # Create your views here.
@@ -11,9 +11,18 @@ def render_index(request):
 def render_cadastrousuario(request):
     form = forms.UsuarioCriarForm(request.POST or None)
     form.is_valid()
-
     return render(request, 'cadastrousuario.html', {'form': form})
 
+def salvarusuario(request):
+    form = forms.UsuarioCriarForm(request.POST or None)
+    form.is_valid()
+    usuario_obj = Usuario.objects.create()
+    usuario_obj.nome_usuario = request.POST['nome_usuario']
+    usuario_obj.dt_nasc_usuario = request.POST['dt_nasc_usuario']
+    usuario_obj.email = request.POST['email']
+    usuario_obj.senha = request.POST['senha']
+    usuario_obj.save()
+    return redirect('/cadastrousuario/')
 
 def render_home(request):
     return render(request, 'home.html')
@@ -25,7 +34,6 @@ def render_maps(request):
     return render(request, 'maps.html', {'form': form})
 
 def render_guia(request):
-
     return render(request, 'guia.html')
 
 def render_guiaresultados(request):
@@ -40,11 +48,24 @@ def render_guiaresultadosacademia(request):
     estabelecimentos = Categoria.objects.all()
     return render(request, 'guiaresultadosacademia.html', {'items' : estabelecimentos})
 
+def render_guiaresultadosparque(request):
+    estabelecimentos = Categoria.objects.all()
+    return render(request, 'guiaresultadosparque.html', {'items' : estabelecimentos})
+
+def render_guiaresultadoslazer(request):
+    estabelecimentos = Categoria.objects.all()
+    return render(request, 'guiaresultadoslazer.html', {'items' : estabelecimentos})
+
+def render_guiaresultadosoutros(request):
+    estabelecimentos = Categoria.objects.all()
+    return render(request, 'guiaresultadosoutros.html', {'items' : estabelecimentos})
+
 def render_parceiras(request):
     return render(request, 'parceiras.html')
  
 def render_parceirasresultados(request):
-    return render(request, 'parceirasresultados.html')
+    parceiras = FiltroParceiras.objects.all()
+    return render(request, 'parceirasresultados.html', {'itemsparceiras' : parceiras})
 
 def render_cadastroparceiras(request):
     form = forms.ParceirasCriarForm(request.POST or None)
