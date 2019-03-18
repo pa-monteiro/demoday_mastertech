@@ -2,28 +2,47 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div id="map">
-        <div class="padrao">
-            <img src="{% static 'icones/map.png' %}" alt="" onclick="window.location='/maps/'">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta minima doloribus tempora asperiores ex ea iusto dolores velit eveniet? Unde, eum illum. Deserunt enim, inventore excepturi accusantium porro doloremque.</p>
+
+<div id="pagina-home">
+    <div id="home">
+        <h1>HOME</h1>
+    </div>
+</div>   
+<div id="colunas">
+    <div id="coluna1">
+        <div id="map">
+            <div class="padrao">
+                <img src="{% static 'icones/map-location.png' %}" alt="" onclick="window.location='/maps/'">
+                <h1>MAPA</h1>
+                <p>Você marcou compromisso em um lugar que não conhece, e agora? Descubra se a região é segura ou não, de acordo com a avaliação de outras mulheres! </p>
+            </div>
         </div> 
+        <div id="help">
+            <div class="padrao">
+                <img src="{% static 'icones/social-care.png' %}" alt="" onclick="window.location='/parceiras/'">
+                <h1>AJUDA</h1>
+                <p>Precisa de uma ajuda profissional? Aqui você encontra especialistas preparadas para atender mulheres, por variados preços e em qualquer região!</p>
+            </div>
+        </div>   
+    </div>
+
+    <div id="coluna2">
         <div id="guide">
             <div class="padrao">
-                <img src="{% static 'icones/guide.png' %}" alt="" onclick="window.location='/guia/'">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta minima doloribus tempora asperiores ex ea iusto dolores velit eveniet? Unde, eum illum. Deserunt enim, inventore excepturi accusantium porro doloremque.</p>
+                <img src="{% static 'icones/disco-ball.png' %}" alt="" onclick="window.location='/guia/'">
+                <h1>GUIA</h1>
+                <p>Hora de curtir! Conheça os bares, as baladas e os parques que mais passam segurança e bem estar às nossas usuárias.</p>
             </div>
-            <div id="help">
-                <div class="padrao">
-                    <img src="{% static 'icones/help.png' %}" alt="" onclick="window.location='/parceiras/'">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta minima doloribus tempora asperiores ex ea iusto dolores velit eveniet? Unde, eum illum. Deserunt enim, inventore excepturi accusantium porro doloremque.</p>
-                </div>
-                <div id="forum">
-                    <div class="padrao">
-                        <img src="{% static 'icones/forum.png' %}" alt="" onclick="window.location='/forum/'">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dicta minima doloribus tempora asperiores ex ea iusto dolores velit eveniet? Unde, eum illum. Deserunt enim, inventore excepturi accusantium porro doloremque.</p>
-                    </div>
-                </div>
+        </div>
+        <div id="forum">
+            <div class="padrao">
+                <img src="{% static 'icones/speech-bubble.png' %}" alt="" onclick="window.location='/forum/'">
+                <h1>FÓRUM</h1>
+                <p>Hora de conversar! Publique e comente aqui dicas, recomendações, debates, experiências pessoais ou pensamentos sobre universo feminino.</p>
             </div>
         </div>
     </div>
+</div>
+
+<footer> <p>Desenvolvido por alunas Mastertech © Todos os direitos reservados</p></footer>
 {% endblock %}
