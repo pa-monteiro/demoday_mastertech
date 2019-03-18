@@ -1,5 +1,6 @@
 from django import forms
 from lovelace.models import Usuario
+from datetime import date
 
 #class DateInput(forms.DateInput):
 #    input_type = 'date'
@@ -61,12 +62,14 @@ class UsuariooCriarForm(forms.Form):
         )
     )
 
-    dt_nasc_usuario = forms.DateField(
+    dt_nasc_usuario = forms.DateTimeField(
         label='Data de Nascimento',
+        input_formats=['%d/%m/%Y'],
         widget=forms.DateInput(
+            format='%d/%m/%Y',
             attrs={
                 'required' : True,
-                'id' : 'dt_nasc_usuario'
+                'id' : 'dt_nasc_usuario',
             }
         )
     )

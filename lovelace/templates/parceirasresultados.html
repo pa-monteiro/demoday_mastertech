@@ -1,1 +1,22 @@
 {% extends 'layout.html' %} 
+{% load staticfiles %}
+
+{% block content %}
+
+    <div>
+        {%  for i in itemsparceiras %}
+        {% if i.nome == "Advogada" %}
+            <p>{{i.nome}}</p>
+            <p>{{i.parceiras.nome_parceira}}</p>
+            <p>{{i.parceiras.profissao}}</p>
+            <p>{{i.parceiras.endereco_atend}}</p>
+            <p>{{i.parceiras.tipo_atend}}</p>
+            <p>{{i.parceiras.valor}}</p>
+            <p>{{i.parceiras.telefone_parceiras}}</p>
+            <p>{{i.parceiras.celular_parceiras}}</p>
+            <p>{{i.parceiras.email_parceiras}}</p><br>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

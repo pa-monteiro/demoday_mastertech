@@ -27,9 +27,15 @@ urlpatterns = [
     path('maps/', views.render_maps),
     path('guia/', views.render_guia),
     path('guiaresultados/', views.render_guiaresultados),
+    path('guiaresultadosbalada/', views.render_guiaresultadosbalada),
+    path('guiaresultadosacademia/', views.render_guiaresultadosacademia),
+    path('guiaresultadosparque/', views.render_guiaresultadosacademia),
+    path('guiaresultadoslazer/', views.render_guiaresultadosacademia),
+    path('guiaresultadosoutros/', views.render_guiaresultadosacademia),
     path('parceiras/', views.render_parceiras),
     path('parceirasresultados/', views.render_parceirasresultados),
     path('cadastroparceiras/', views.render_cadastroparceiras),
     path('forum/', views.render_forum),
-    path('salvarparceiras/', views.salvarparceiras)
+    path('salvarparceiras/', views.salvarparceiras),
+    path('salvarusuario/', views.salvarusuario)
 ]

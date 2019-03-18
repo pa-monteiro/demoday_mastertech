@@ -333,3 +333,8 @@ input{
 } */
 
 
+@media (max_width:768px){
+    toggle{
+        display: block;
+    }
+}
