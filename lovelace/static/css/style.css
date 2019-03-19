@@ -338,3 +338,42 @@ input{
         display: block;
     }
 }
+
+/* PARCEIRAS */
+
+#pagParceiras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    margin-top: 250px;
+}
+.circle{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 100%;
+}
+.coluna {
+    flex-direction: column;
+}
+#inputparca{
+    height: 100px;
+    background-color: #FF0047;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputParceiras {
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+.paragrafosParceira{
+    color: white;
+    font-size: 20pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

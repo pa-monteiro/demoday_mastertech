@@ -7,12 +7,30 @@
 
     <div>
             <form>
-                {% csrf_token %}
-                {{form.as_p}}
-        
+                <h3>Este lugar é iluminado?</h3>
+                <input type="radio" name="iluminado" value="Sim" id="iluminados"> Sim
+                <input type="radio" name="iluminado" value="Nao" id="iluminadon"> Nao
+                <h3>Este lugar é movimentado?</h3>
+                <input type="radio" name="movimentado" value="Sim" id="movimentados"> Sim
+                <input type="radio" name="movimentado" value="Nao" id="movimentadon"> Nao
+                <h3>Este lugar tem vigilancia?</h3>
+                <input type="radio" name="vigilancia" value="Sim" id="vigilancias"> Sim
+                <input type="radio" name="vigilancia" value="Nao" id="vigilancian"> Nao
+                <h3>Voce se sente segura aqui?</h3>
+                <input type="radio" name="seguranca" value="Sim" id="segurancas"> Sim
+                <input type="radio" name="seguranca" value="Nao" id="segurancan"> Nao
+
                 <button type="submit"> Enviar </button>
             </form>
         
+            <div>
+                    {%  for i in items %}
+                        <p>{{i.formulario.iluminado}}</p>
+                        <p>{{i.formulario.movimentado}}</p>
+                        <p>{{i.formulario.vigilancia}}</p>
+                        <p>{{i.formulario.seguranca}}</p><br>
+                    {% endfor %}
+                </div>
         
         </div>
 {% endblock %}
